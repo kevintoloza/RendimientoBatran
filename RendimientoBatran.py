@@ -128,4 +128,8 @@ if __name__ == '__main__':
         Ejecutar(queries.DiscoBatranIO,'discoioBatran',queries.DELETE_DISCO_IO_BASE_INTERVAL)
         Ejecutar(queries.BloqueoBatran,'bloqueoBatran',queries.DELETE_BLOQUEO_BASE_INTERVAL)
         
+        if (dtime.hour == 23 and dtime.minute == 58):
+            logging.info("Se ejecuta proceso almacenado")
+            delete_mysql(queries.INTERVALOS_DIAS)
+
         time.sleep(60)
